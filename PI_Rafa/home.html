@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home | Sistema de gestão de navios</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-language" content="pt-br" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+		<link href="/favicon.ico" type="image/x-icon" rel="icon" />
+		<link href="/estaticos/styles/base.css" rel="stylesheet" type="text/css" media="all" charset="utf-8" />
+		<link href="/estaticos/styles/screen.css" rel="stylesheet" type="text/css" media="all" charset="utf-8" />
+		<link href="/estaticos/styles/chartist.css" rel="stylesheet" type="text/css" media="all" charset="utf-8" />
+		<link href="/estaticos/styles/jquery.interface.css" rel="stylesheet" type="text/css" media="all" charset="utf-8" />
+		<script src="/estaticos/scripts/jquery.js" language="javascript" type="text/javascript" charset="utf-8"></script>
+		<script src="/estaticos/scripts/chartist.js" language="javascript" type="text/javascript" charset="utf-8"></script>
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>	
+		<script src="http://maps.google.com/maps/api/js?key=AIzaSyCqgQgrdlxlIZQNdUXsttZZc0le_aSULv8" type="text/javascript"></script>		
+	</head>
+	<body class="loginGraficos">
+		<header>
+			<div class="divLogo">
+				<a href="http://zwww.avancer.com.br/">
+					<img data-altlogo="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGO-AVANCER.png" src="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGOBRANCA.png" alt="Avancer">
+				</a>
+			</div>
+			<nav role="navigation">
+				<ul>
+					<li><a href="home.html" aria-haspopup="true">HOME</a></li>
+					<li><a href="listarEventos.html" aria-haspopup="true">EVENTOS</a></li>
+					<li><a href="listarNavios.html" aria-haspopup="true">EMBARCAÇÕES</a></li>
+					<li><a href="listarUsuarios.html" aria-haspopup="true">USUÁRIOS</a></li>
+				</ul>
+			</nav>
+			<div class="divIcons">
+				<a class="icon" href="index.html"><i class="fas fa-power-off"></i></a>				
+				<a class="icon" href="listarUsuarios.html.html"><i class="fas fa-user-circle"></i></a>
+			</div>
+		</header>
+		
+		<p:outputPanel id="restrictPanel" layout="block" style="width:100%;height:800px;border:2px solid #666666;margin-bottom:20px">
+		  
+  		   		    		
+    		<p:panel id="local" header="Localização" closable="true" style="width:800px">
+				<p:gmap center="-22.9260412,-43.209495" zoom="10" type="ROADMAP" style="width:100%;height:300px" />
+    		</p:panel> 
+			
+		</p:outPanel>
+
+		
+		<!-- Gráficos -->
+		<div class="esquerdaGrafico">
+			<h3>Estatísticas de Eventos</h3>
+			<div class="graficoMedicoes">
+				<canvas id="grafic" width="200" height="100"></canvas>
+			</div>
+			<div class="graficoMedicoes">
+				<canvas id="grafic2" width="200" height="100"></canvas>
+			</div>
+			<div class="graficoMedicoes">
+				<canvas id="grafic3" width="200" height="100"></canvas>
+			</div>
+		</div>
+
+		<div class="direitoGrafico">
+			<h3>Gráfico de Eventos</h3>
+			<canvas id="myChart" width="412" height="235"></canvas>
+		</div>
+		<!-- Gráficos -->
+
+		<footer>
+			<div class="contatoFooter">
+				<p>Contato / Grupo5-2018@gmail.com</p>
+			</div>
+
+			<div class="meioFooter">
+				<span>©Produzido pelo Grupo5-2018</span>
+			</div>
+
+			<div class="iconFooter">
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+
+			// outra forma de fazer o Chart pizza-doughnut
+			var ctx = document.getElementById("grafic").getContext('2d');
+			var grafic = new Chart(ctx, {
+				"type":"doughnut",
+				"data":{
+					"labels":["Inativos","Ativos"],
+					"datasets":[{
+						"label":"Gráfico",
+						"data":[300,50,100],
+						"backgroundColor":["rgb(133, 162, 208)",
+						"rgb(38, 82, 174)",
+						"rgb(133, 162, 208)"
+					]}
+				]}	
+			});
+				
+			// Chart pizza-doughnut
+			var ctx = document.getElementById("grafic2").getContext('2d');
+			var grafic2 = new Chart(ctx, {
+				"type":"doughnut",
+				"data":{
+					"labels":["Resolvidos em menos de 24 horas","Resolvidos após 24 horas"],
+					"datasets":[{
+						"label":"Gráfico",
+						"data":[300,50,100],
+						"backgroundColor":["rgb(133, 162, 208)",
+						"rgb(38, 82, 174)",
+						"rgb(133, 162, 208)"
+					]}
+				]}	
+			});	
+
+
+			// Chart pizza-doughnut
+			var ctx = document.getElementById("grafic3").getContext('2d');
+			var grafic3 = new Chart(ctx, {
+				"type":"doughnut",
+				"data":{
+					"labels":["Regulares","Irregulares"],
+					"datasets":[{
+						"label":"Gráfico",
+						"data":[300,50,100],
+						"backgroundColor":["rgb(133, 162, 208)",
+						"rgb(38, 82, 174)",
+						"rgb(133, 162, 208)"
+					]}
+				]}	
+			});	
+
+
+
+			// gráfico da baleia 
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var myChart = new Chart(ctx, {
+			    type: 'line',
+			    data: {
+			        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+			        datasets: [{
+			            
+			             label: "Acompanhados de erros",
+			            backgroundColor: "rgba(192,41,100,0.7)",
+			            borderColor: "rgba(192,41,100,0.7)",
+			            pointBorderColor: "rgba(192,41,100,0.7)",
+			            pointBackgrounColor: "rgba(192,41,100,0.7)",
+			            pointHoverBackgroundColor: "#fff",
+			            pointHoverBorderColor: "rgba(220,220,220,1)",
+			            pointBorderWidth: 1,
+			            data: [31,74,6,39,20,85,7]
+			            }, {
+			            label: "Regulares",
+			            // backgroundColor: "rgba(102,134,201,0.3)",
+			            backgroundColor: "rgba(102,134,201,0.7)",
+			            borderColor: "rgba(102,134,201,0.70)",
+			            pointBorderColor: "rgba(102,134,201,0.70)",
+			            pointBackgrounColor: "rgba(102,134,201,0.70)",
+			            pointHoverBackgroundColor: "#fff",
+			            pointHoverBorderColor: "rgba(151,187,205,1)",
+			            pointBorderWidth: 1,
+			            data: [82,23,66,9,99,4,2],
+			        }]
+			    },
+
+			});
+
+		</script>    		
+	</body>
+</html>

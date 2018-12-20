@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:b="http://bootsfaces.net/ui">
+	<head>
+		<title>Login | Sistema de gestão de navios</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	</head>
+	<body class="login-page">
+		<header>
+			<div class="divLogo">
+				<a href="http://www.avancer.com.br/">
+					<img data-altlogo="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGO-AVANCER.png" src="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGOBRANCA.png" alt="Avancer">
+				</a>
+			</div>
+
+			<div class="btnCabecalho">
+				<form>
+					<table>
+						<tr class="bt_formulario_cabeca">
+							<td class="acessarLoginCabeca">
+								<input type="button" name="autenticar" value="Acessar" class="" onclick="window.location.href='home.html'"/>
+							</td>
+							<td class="cadastrarLoginCabeca">
+								<input type="button" name="autenticar" value="Cadastrar" class="" onclick="window.location.href='formulario.html'"/>
+							</td>
+						</tr>						
+					</table>
+				</form>
+			</div>
+		</header>
+
+		<div class="corpo">
+			<div class="login">
+				<form class="formLogin">
+					<div class="imgLogoLogin">
+						<a href=""><i class="fas fa-ship"></i></a>
+					</div>
+					<table>
+						<tr>
+							<td>
+								<tr>
+									<td class="labelLogin">
+										<label>Email</label>	
+									</td>							
+								</tr>
+								<tr>
+									<td>
+										<input id="usuario_nome" type="text" name="nome" placeholder="mariadasilva@gmail.com">
+									</td>
+								</tr>
+								<tr>
+									<td class="lembrarLogin">
+										<a href="/cadastro/lembrar">Lembrar</a>
+									</td>
+								</tr>								
+							</td>
+							<td>
+								<tr>
+									<td class="labelLogin">
+										<label>Senha</label>	
+									</td>							
+								</tr>
+								<tr>
+									<td>
+										<input id="usuario_senha" type="password" name="senha" placeholder="********">
+									</td>
+								</tr>
+							</td>				
+						</tr>						
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr class="bt_formulario_rodape">
+							<td class="acessarLogin">
+								<input type="button" name="autenticar" value="Acessar" class="" onclick="window.location.href='home.html'"/>
+							</td>
+							<td class="cadastrarLogin">
+								<input type="button" name="autenticar" value="Cadastrar" class="" onclick="window.location.href='formulario.html'"/>
+							</td>
+						</tr>						
+					</table>
+				</form>
+			</div>
+			
+		</div>
+
+		<footer>
+			<div class="contatoFooter">
+				<p>Contato / Grupo5-2018@gmail.com</p>
+			</div>
+
+			<div class="meioFooter">
+				<span>©Produzido pelo Grupo5-2018.2</span>
+			</div>
+
+			<div class="iconFooter">
+			</div>
+		</footer>
+	</body>
+</html>

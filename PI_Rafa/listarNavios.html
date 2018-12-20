@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:b="http://bootsfaces.net/ui">
+	<head>
+		<title>Lista de navios | Sistema de gestão de navios</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	</head>
+	<body class="login-page listaNav">
+		<header>
+			<div class="divLogo">
+				<a href="http://www.avancer.com.br/">
+					<img data-altlogo="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGO-AVANCER.png" src="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGOBRANCA.png" alt="Avancer">
+				</a>
+			</div>
+			<nav role="navigation">
+				<ul>
+					<li><a href="home.html" aria-haspopup="true">HOME</a></li>
+					<li><a href="listarEventos.html" aria-haspopup="true">EVENTOS</a></li>
+					<li><a href="listarNavios.html" aria-haspopup="true">EMBARCAÇÕES</a></li>
+					<li><a href="listarUsuarios.html" aria-haspopup="true">USUÁRIOS</a></li>
+				</ul>
+			</nav>
+			<div class="divIcons">
+				<a class="icon" href="index.html"><i class="fas fa-power-off"></i></a>				
+				<a class="icon" href="listarUsuarios.html.html"><i class="fas fa-user-circle"></i></a>
+			</div>
+		</header>
+		<form action="">
+			<div id="retranca" class="retranca clearfix">
+				<div class="tituloCima"></div>
+				<div class="botoesCima">
+				</div>
+			</div>
+			<div id="divFormEventos" class="divFormEventos clearfix">
+				<div class="corpoEventos">
+					<div class="">
+						<div class="larguraForm">	
+							<table class="FormEventosCadastrar  FormEventosCadastrarll">
+								<tr class="FormEventosCadastrar_cabeca">
+									<td class="FormEventosCadastrar_titulo" colspan="2"><h1>Lista de Embarcações</h1></td>
+								</tr>
+								<tr class="">
+									<td class="">
+										<table class="pintegrador_filtragem">
+											<tr class="pintegrador_filtragem_corpo">
+												<td class="pintegrador_filtragem_campo">
+													<table class="campoEvento">
+														<tr class="campoEvento_corpo">
+															<td class="campoEvento_valor">
+																Ordenar por:
+																<select name="usuario_id" size="1" onchange="this.form.submit();">
+																	<option value="">Código</option>
+																	<option value="Prioridade"></option>
+																	<option value="Data da Ocorrência"></option>
+																</select>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td class="pintegrador_filtragem_campo">
+													<table class="pintegrador_campo">
+														<tr class="pintegrador_campo_corpo">
+															<td class="pintegrador_campo_valor">
+															Filtrar por Status:
+															<select name="situacao" size="1" onchange="this.form.submit();">
+															<option value="todas">Ativo</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															</select>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td class="pintegrador_filtragem_campo">
+													<table class="pintegrador_campo">
+														<tr class="pintegrador_campo_corpo">
+																<td class="pintegrador_campo_valor">
+																Buscar :
+																<input type="text" name="busca" size="40" value="" class="pintegrador_campo_busca" onchange="this.form.submit();"/></td>
+														</tr>
+													</table>
+												</td>
+												<td class="pintegrador_filtragem_flexivel">&nbsp;</td>
+											</tr>
+										</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="">
+										<table class="pintegrador_listagem">
+											<tr class="pintegrador_listagem_cabeca">
+												<th class="pintegrador_listagem_coluna pintegrador_largura_30 pintegrador_centro">Código da Embarcação</th>
+												<th class="pintegrador_listagem_coluna pintegrador_largura_30 pintegrador_centro">Nome da embarcação</th>
+												<th class="pintegrador_listagem_coluna pintegrador_largura_30 pintegrador_centro">Status</th>
+											</tr>
+											<tr class="pintegrador_listagem_corpo">
+												<td class="pintegrador_listagem_celula pintegrador_largura_90">1</td>
+												<td class="pintegrador_listagem_celula">Octavios</td>
+												<td class="pintegrador_listagem_celula pintegrador_largura_210">Ativo</td>
+											</tr>
+											<tr class="pintegrador_listagem_corpo">
+												<td class="pintegrador_listagem_celula pintegrador_largura_90">2</td>
+												<td class="pintegrador_listagem_celula">S.Baltimore</td>
+												<td class="pintegrador_listagem_celula pintegrador_largura_210">Ativo</td>
+											</tr>
+											<tr class="pintegrador_listagem_corpo">
+												<td class="pintegrador_listagem_celula pintegrador_largura_90">3</td>
+												<td class="pintegrador_listagem_celula">Baichimo</td>
+												<td class="pintegrador_listagem_celula pintegrador_largura_210">Ativo</td>
+											</tr>
+											<tr class="pintegrador_listagem_corpo">
+												<td class="pintegrador_listagem_celula pintegrador_largura_90">4</td>
+												<td class="pintegrador_listagem_celula">D.D.Volvo</td>
+												<td class="pintegrador_listagem_celula pintegrador_largura_210">Ativo</td>
+											</tr>
+											<tr class="pintegrador_listagem_corpo">
+												<td class="pintegrador_listagem_celula pintegrador_largura_90">5</td>
+												<td class="pintegrador_listagem_celula">S.Mercury</td>
+												<td class="pintegrador_listagem_celula pintegrador_largura_210">Ativo</td>
+											</tr>
+										</table>
+									</td>
+									</tr>
+							</table>
+
+						<br/>
+
+						<div class="mapouter">
+						<div class="gmap_canvas">
+						<iframe width="1000" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=-22.919333%2C%20-43.147703&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">		
+						</iframe>
+						<a href="https://www.pureblack.de/webdesign-wiesbaden/">			
+						</a>
+						</div>
+						<style>
+						.mapouter{text-align:right;height:100px;width:1000px;}.gmap_canvas {overflow:hidden;background:none!important;}
+						</style>
+						</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('.imagem_incluir').click(function(){
+				$('.imagem_excluir').hide();
+				$('.imagem_incluir').show();
+				$('#paciente_imagem_excluir').val('');
+			});
+			$('.imagem_excluir').click(function(){
+				$('.imagem_excluir').hide();
+				$('.imagem_incluir').show();
+				$('#paciente_imagem_excluir').val('1');
+			});
+		});
+		</script>
+	</body>
+</html>

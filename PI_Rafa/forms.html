@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui"
+xmlns:b="http://bootsfaces.net/ui">
+	<head>
+		<title>Cadastro de eventos | Sistema de gestão de navios</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	</head>
+	<body class="login-page ">
+		<header>
+			<div class="divLogo">
+				<a href="http://www.avancer.com.br/">
+					<img data-altlogo="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGO-AVANCER.png" src="http://www.avancer.com.br/wp-content/uploads/2017/10/LOGOBRANCA.png" alt="Avancer">
+				</a>
+			</div>
+			<nav role="navigation">
+				<ul>
+					<li><a href="home.html" aria-haspopup="true">HOME</a></li>
+					<li><a href="listarEventos.html" aria-haspopup="true">EVENTOS</a></li>
+					<li><a href="listarNavios.html" aria-haspopup="true">EMBARCAÇÕES</a></li>
+					<li><a href="listarUsuarios.html" aria-haspopup="true">USUÁRIOS</a></li>
+				</ul>
+			</nav>
+			<div class="divIcons">
+				<a class="icon" href="index.html"><i class="fas fa-power-off"></i></a>				
+				<a class="icon" href="listarUsuarios.html.html"><i class="fas fa-user-circle"></i></a>
+			</div>
+		</header>
+		<form action="">
+			<div id="retranca" class="retranca clearfix">
+				<div class="tituloCima"></div>
+				<div class="botoesCima">
+				</div>
+			</div>
+			<div id="divFormEventos" class="divFormEventos clearfix">
+				<div class="corpoEventos">
+					<div class="corpoTudo">
+
+					</div>
+
+					<div class="">
+						<div class="larguraForm">
+							<div class="">
+								<table class="FormEventosCadastrar">
+									<tr class="FormEventosCadastrar_cabeca">
+										<td class="FormEventosCadastrar_titulo" colspan="2">Informações do evento</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">data do evento</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">id do evento</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">discrição do evento</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">status do evento</label></td>
+													<td class="campoEvento_valor"><input type="password" id="" name="" size="40" maxlength="32" value=""/></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">navio</label></td>
+													<td class="campoEvento_valor">
+														<select id="" name="" size="1" onchange="this.form.submit();">
+															<option value="">-</option>
+																<option value="<?php echo($unidade->id); ?>" selected="selected"></option>
+															<option value="<?php echo($unidade->id); ?>"></option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="">
+													<td class="">
+														<table class="campoEvento">
+															<tr class="campoEvento_corpo">
+																<td class="campoEvento_rotulo"><label for="">Status do evento</label></td>
+																<td class="campoEvento_valor"><select id="" name="" size="1">
+																
+																<option value="1" selected="selected">Ativo</option>
+																<option value="0">Inativo</option>
+																
+																<option value="1">Ativo</option>
+																<option value="0" selected="selected">Inativo</option>
+																
+																</select></td>
+															</tr>
+														</table>
+													</td>
+													<td class="">&nbsp;</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+
+								</table>
+								<table class="FormEventosCadastrar">
+									<tr class="FormEventosCadastrar_cabeca">
+										<td class="FormEventosCadastrar_titulo" colspan="2">Características do Evento</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">inico do atendimento</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">fim do atendimento</label></td>
+													<td class="campoEvento_valor"><input type="password" id="" name="" size="40" maxlength="32" value=""/></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">Barco</label></td>
+													<td class="campoEvento_valor">
+														<select id="" name="" size="1" onchange="this.form.submit();">
+															<option value="">-</option>
+																<option value="<?php echo($unidade->id); ?>" selected="selected"></option>
+															<option value="<?php echo($unidade->id); ?>"></option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento obrigatorio">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo">
+														<label for="usuario_id">Usuário</label>
+													</td>
+													<td class="campoEvento_valor">
+														<select id="usuario_id" name="" size="1">
+															<option value="">-</option>
+																<option value="" selected="selected"></option>
+																<option value=""></option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+
+								</table>
+								<table class="FormEventosCadastrar">
+									<tr class="FormEventosCadastrar_cabeca">
+										<td class="FormEventosCadastrar_titulo" colspan="2">Observação do evento</td>
+									</tr>
+									<tr class="">
+										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">Observação</label></td>
+													<td class="campoEvento_valor">
+														<textarea name="Observação do evento"></textarea>
+													</td>
+												</tr>
+											</table>
+										</td>
+<!-- 										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">Fixo</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td> -->
+									</tr>
+<!-- 									<tr class="">
+										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">Movel</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+										<td class="">
+											<table class="campoEvento">
+												<tr class="campoEvento_corpo">
+													<td class="campoEvento_rotulo"><label for="">Movel</label></td>
+													<td class="campoEvento_valor"><input type="text" id="" name="" size="40" value=""/></td>
+												</tr>
+											</table>
+										</td>
+									</tr> -->
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('.imagem_incluir').click(function(){
+				$('.imagem_excluir').hide();
+				$('.imagem_incluir').show();
+				$('#paciente_imagem_excluir').val('');
+			});
+			$('.imagem_excluir').click(function(){
+				$('.imagem_excluir').hide();
+				$('.imagem_incluir').show();
+				$('#paciente_imagem_excluir').val('1');
+			});
+		});
+		</script>
+	</body>
+</html>
